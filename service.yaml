@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: postgres-external
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+      nodePort: 30916
+  type: NodePort
+  selector:
+    deployment: postgres
